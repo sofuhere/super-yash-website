@@ -38,7 +38,7 @@ export default function Hero() {
           <span className="text-[#a2a2a2] transition-colors duration-300 group-hover/yash:text-[#d6211e]">
             Yash
           </span>
-          <span className="inline-block align-middle mx-[4px] sm:mx-[6px] relative -top-[2px] md:-top-[3px] transition-transform duration-300 group-hover/yash:rotate-12 group-hover/yash:scale-105 active:scale-95">
+          <span className="inline-block align-middle ml-[4px] sm:ml-[6px] relative -top-[2px] md:-top-[3px] transition-transform duration-300 group-hover/yash:rotate-12 group-hover/yash:scale-105 active:scale-95">
             <span className="block w-[24px] h-[24px] sm:w-[30px] sm:h-[30px] lg:w-[36px] lg:h-[36px]">
               <CricketBall
                 className="w-full h-full"
@@ -47,12 +47,14 @@ export default function Hero() {
             </span>
           </span>
         </span>
-        <span> a</span>
         <br />
+        <span>a </span>
         <span className="text-[#d6211e]">product manager</span>
-        <span> with roots in</span>
+        <span> with</span>
         <br />
-        <span>design &amp; who enjoys playing cricket.</span>
+        <span>roots in design &amp; who</span>
+        <br />
+        <span>enjoys playing cricket.</span>
       </motion.h1>
       <HeroCta />
     </main>
