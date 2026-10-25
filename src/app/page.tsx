@@ -9,7 +9,7 @@ export default function Home() {
         <Hero />
       </div>
       {/* Invisible spacer to balance header height for optical vertical centering */}
-      <div className="h-0 md:h-[48px]" aria-hidden="true" />
+      <div className="h-0 md:h-[24px]" aria-hidden="true" />
     </div>
   );
 }

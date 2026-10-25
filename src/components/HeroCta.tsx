@@ -53,7 +53,7 @@ export default function HeroCta() {
     <motion.div
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.65, delay: 0.52, ease: [0.16, 1, 0.3, 1] }}
       className="flex items-center justify-center gap-[12px] w-[258px] mt-[24px] select-none"
     >
       {/* 1. "See my work" Button (182 x 56 px) */}
