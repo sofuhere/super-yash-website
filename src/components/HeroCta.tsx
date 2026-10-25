@@ -60,7 +60,7 @@ export default function HeroCta() {
       <a
         href="#work"
         onClick={handleWorkClick}
-        className="group h-[56px] w-[182px] shrink-0 rounded-[12px] border border-[#d9d9d9] bg-transparent flex items-center pl-[18px] pr-[18px] gap-[4px] transition-all duration-200 hover:border-[#1c1b19] hover:bg-[#efece5] active:scale-[0.98]"
+        className="group h-[56px] w-[182px] shrink-0 rounded-[12px] border-[2px] border-[#d9d9d9] bg-transparent flex items-center pl-[18px] pr-[18px] gap-[4px] transition-all duration-200 hover:border-[#1c1b19] hover:bg-[#efece5] active:scale-[0.98]"
         aria-label="See my work"
       >
         {/* Exact stat_minus_2 vector from Figma (28x28) */}
@@ -92,7 +92,7 @@ export default function HeroCta() {
           onClick={handleEmailClick}
           aria-label="Send email to Yash Choudhary"
           title="Send email or click to copy"
-          className="group h-[56px] w-[64px] shrink-0 rounded-[12px] border border-[#d9d9d9] bg-transparent flex items-center justify-center transition-all duration-200 hover:border-[#1c1b19] hover:bg-[#efece5] active:scale-[0.98]"
+          className="group h-[56px] w-[64px] shrink-0 rounded-[12px] border-[2px] border-[#d9d9d9] bg-transparent flex items-center justify-center transition-all duration-200 hover:border-[#1c1b19] hover:bg-[#efece5] active:scale-[0.98]"
         >
           {copied ? (
             <svg
