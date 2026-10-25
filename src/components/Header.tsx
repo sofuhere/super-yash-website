@@ -15,7 +15,7 @@ export default function Header() {
   return (
     <header className="w-full relative z-20">
       {/* Desktop view (>= 1024px): 3-column baseline-locked grid */}
-      <div className="hidden lg:grid grid-cols-[1fr_auto_1fr] items-baseline px-8 xl:px-[120px] pt-[48px]">
+      <div className="hidden lg:grid grid-cols-[1fr_auto_1fr] items-baseline px-8 xl:px-[120px] pt-[24px]">
         <div className="justify-self-start">
           <Logo />
         </div>
