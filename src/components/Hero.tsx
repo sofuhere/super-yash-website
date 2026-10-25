@@ -50,9 +50,9 @@ export default function Hero() {
         <span> a</span>
         <br />
         <span className="text-[#d6211e]">product manager</span>
-        <span> with roots in design</span>
+        <span> with roots in</span>
         <br />
-        <span>&amp; who enjoys playing cricket.</span>
+        <span>design &amp; who enjoys playing cricket.</span>
       </motion.h1>
       <HeroCta />
     </main>
