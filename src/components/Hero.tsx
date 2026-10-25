@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import CricketBall from "./CricketBall";
+import HeroCta from "./HeroCta";
 
 /**
  * Hero section — main headline with exact Figma styling.
@@ -25,7 +26,7 @@ import CricketBall from "./CricketBall";
  */
 export default function Hero() {
   return (
-    <main className="flex items-center justify-center flex-1 px-6 md:px-12 xl:px-[120px] py-12 md:py-0 select-none">
+    <main className="flex flex-col items-center justify-center flex-1 px-6 md:px-12 xl:px-[120px] py-12 md:py-0 select-none">
       <motion.h1
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
@@ -53,6 +54,7 @@ export default function Hero() {
         <br />
         <span>&amp; who enjoys playing cricket.</span>
       </motion.h1>
+      <HeroCta />
     </main>
   );
 }
