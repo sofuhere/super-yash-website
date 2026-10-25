@@ -19,12 +19,12 @@ const navItems = [
 
 export default function Nav() {
   return (
-    <nav className="flex items-baseline gap-[20px] md:gap-[24px] overflow-x-auto no-scrollbar">
+    <nav className="flex items-center gap-[20px] md:gap-[24px] overflow-x-auto no-scrollbar h-[30px]">
       {navItems.map((item) => (
         <a
           key={item.number}
           href={item.href}
-          className="inline-flex items-baseline relative group transition-opacity duration-200 hover:opacity-70 whitespace-nowrap"
+          className="inline-flex items-center relative group transition-opacity duration-200 hover:opacity-70 whitespace-nowrap h-[30px]"
         >
           <span
             className="font-sans text-[15px] md:text-[16px] font-normal text-[#1c1b19] leading-[1.25] tracking-[-0.04em]"
@@ -32,7 +32,7 @@ export default function Nav() {
             {item.label}
           </span>
           <span
-            className="font-mono text-[9px] md:text-[10px] font-light text-[#a2a2a2] leading-[1] tracking-[-0.06em] ml-[1px] relative -top-[6px]"
+            className="font-mono text-[9px] md:text-[10px] font-light text-[#a2a2a2] leading-none tracking-[-0.06em] ml-[1px] relative -top-[5px]"
           >
             {item.number}
           </span>

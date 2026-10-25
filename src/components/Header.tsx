@@ -64,21 +64,21 @@ export default function Header() {
         }`}
       >
         <div className="w-full max-w-[1512px] mx-auto">
-          {/* Desktop view (>= 1024px): 3-column baseline-locked grid (exact 84px height) */}
-          <div className="hidden lg:grid grid-cols-[1fr_auto_1fr] items-baseline px-8 xl:px-[120px] pt-[24px] pb-[24px]">
-            <div className="justify-self-start">
+          {/* Desktop view (>= 1024px): 3-column centered grid (exact 84px height matching Figma) */}
+          <div className="hidden lg:grid grid-cols-[1fr_auto_1fr] items-center px-8 xl:px-[120px] h-[84px]">
+            <div className="justify-self-start flex items-center">
               <Logo />
             </div>
-            <div className="justify-self-center">
+            <div className="justify-self-center flex items-center">
               <Nav />
             </div>
-            <div className="justify-self-end">
+            <div className="justify-self-end flex items-center">
               <SoundToggle />
             </div>
           </div>
 
           {/* Mobile & Tablet view (< 1024px) */}
-          <div className="flex lg:hidden flex-col gap-3 px-6 pt-4 pb-4">
+          <div className="flex lg:hidden flex-col gap-3 px-6 py-4">
             <div className="flex items-center justify-between w-full">
               <Logo />
               <SoundToggle />

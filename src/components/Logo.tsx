@@ -23,12 +23,12 @@ export default function Logo() {
       onMouseLeave={() => setIsHovered(false)}
       onFocus={() => setIsHovered(true)}
       onBlur={() => setIsHovered(false)}
-      className="inline-flex items-baseline gap-[10px] select-none group cursor-pointer"
+      className="inline-flex items-center gap-[10px] select-none group cursor-pointer h-[36px]"
       aria-label="Super Yash Portfolio Home"
     >
       {/* Cricket ball with spring tilt/zoom on hover */}
       <motion.span
-        className="inline-block relative top-[13px]"
+        className="inline-flex items-center justify-center shrink-0 w-[36px] h-[36px]"
         animate={{
           rotate: isHovered ? 20 : 0,
           scale: isHovered ? 1.08 : 1,
@@ -39,7 +39,7 @@ export default function Logo() {
       </motion.span>
 
       {/* Typography with smooth "Super" reveal on hover */}
-      <span className="font-logo text-[20px] font-medium leading-[1.25] tracking-[-0.02em] inline-flex items-baseline">
+      <span className="font-logo text-[20px] font-medium leading-none tracking-[-0.02em] inline-flex items-center">
         <motion.span
           initial={false}
           animate={{
