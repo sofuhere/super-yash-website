@@ -56,19 +56,19 @@ export default function HeroCta() {
       transition={{ duration: 0.65, delay: 0.52, ease: [0.16, 1, 0.3, 1] }}
       className="flex items-center justify-center gap-[12px] w-[258px] mt-[24px] select-none"
     >
-      {/* 1. "See my work" Button (182 x 56 px) */}
+      {/* 1. "See my work" Button (182 x 56 px) - Optically balanced with tight glyph bounds */}
       <a
         href="#work"
         onClick={handleWorkClick}
-        className="group h-[56px] w-[182px] shrink-0 rounded-[12px] border-[2px] border-[#d9d9d9] bg-transparent flex items-center pl-[18px] pr-[18px] gap-[4px] transition-all duration-200 hover:border-[#1c1b19] hover:bg-[#efece5] active:scale-[0.98]"
+        className="group h-[56px] w-[182px] shrink-0 rounded-[12px] border-[2px] border-[#d9d9d9] bg-transparent flex items-center justify-center gap-[8px] transition-all duration-200 hover:border-[#1c1b19] hover:bg-[#efece5] active:scale-[0.98]"
         aria-label="See my work"
       >
-        {/* Exact stat_minus_2 vector from Figma (28x28) */}
-        <div className="w-[28px] h-[28px] shrink-0 flex items-center justify-center transition-transform duration-200 group-hover:translate-y-[2px]">
+        {/* Exact stat_minus_2 vector cropped to glyph bounds (13.21 x 14.40 px) to eliminate phantom padding */}
+        <div className="w-[14px] h-[15px] shrink-0 flex items-center justify-center transition-transform duration-200 group-hover:translate-y-[2px]">
           <svg
-            width="28"
-            height="28"
-            viewBox="18 14 28 28"
+            width="14"
+            height="15"
+            viewBox="25.39 20.95 13.21 14.40"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             aria-hidden="true"
