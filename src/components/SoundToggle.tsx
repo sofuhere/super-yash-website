@@ -18,17 +18,14 @@ export default function SoundToggle() {
       animate={{ opacity: isVisible ? 1 : 0 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
       onClick={toggleSound}
-      className={`inline-flex items-baseline gap-[5px] cursor-pointer group select-none ${
+      className={`inline-flex items-center gap-[5px] cursor-pointer group select-none h-[18px] ${
         isVisible ? "pointer-events-auto" : "pointer-events-none"
       }`}
       aria-label={isPlaying ? "Mute background music" : "Play background music"}
       type="button"
     >
-      {/* 3 Equalizer Bars in a rigid baseline-anchored container: zero X/Y shift */}
-      <span
-        className="relative inline-block w-[8px] h-[10px] select-none"
-        style={{ verticalAlign: "baseline" }}
-      >
+      {/* 3 Equalizer Bars in a rigid centered container: zero X/Y shift */}
+      <span className="relative inline-block w-[8px] h-[10px] shrink-0 select-none">
         <span className="absolute bottom-0 left-0 right-0 h-[10px] flex items-end gap-[1px]">
           <motion.span
             className="w-[2px] bg-[#d9d9d9] block rounded-[0.5px]"
