@@ -11,10 +11,10 @@
  */
 
 const navItems = [
-  { label: "My story", number: "01", href: "#story" },
-  { label: "Taste in music", number: "02", href: "#music" },
-  { label: "Views on politics", number: "03", href: "#politics" },
-  { label: "Work", number: "04", href: "#work" },
+  { label: "Work", number: "01", href: "#work" },
+  { label: "About me", number: "02", href: "#about" },
+  { label: "Taste in music", number: "03", href: "#music" },
+  { label: "Views on politics", number: "04", href: "#politics" },
 ];
 
 export default function Nav() {
