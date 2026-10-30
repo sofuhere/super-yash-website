@@ -32,6 +32,29 @@ const lineVariants: Variants = {
 };
 
 /**
+ * Ball entry animation:
+ * Begins as Line 1 settles (~0.25s), executing a gentle seam-rotation from -45° to 0°
+ * with a soft spring settle that mimics real physical inertia.
+ */
+const ballVariants: Variants = {
+  hidden: {
+    rotate: -45,
+    scale: 0.82,
+  },
+  visible: {
+    rotate: 0,
+    scale: 1,
+    transition: {
+      delay: 0.22,
+      type: "spring",
+      stiffness: 220,
+      damping: 18,
+      mass: 0.8,
+    },
+  },
+};
+
+/**
  * Hero section — main headline with exact Figma styling.
  *
  * Exact Colors:
@@ -60,13 +83,16 @@ export default function Hero() {
             <span className="text-[#a2a2a2] transition-colors duration-300 group-hover/yash:text-[#d6211e]">
               Yash
             </span>
-            <span className="inline-block align-middle ml-[4px] sm:ml-[6px] relative -top-[2px] md:-top-[3px] transition-transform duration-300 group-hover/yash:rotate-12 group-hover/yash:scale-105 active:scale-95">
-              <span className="block w-[24px] h-[24px] sm:w-[30px] sm:h-[30px] lg:w-[36px] lg:h-[36px]">
+            <span className="inline-block align-middle ml-[6px] sm:ml-[8px] lg:ml-[9px] relative -top-[2px] md:-top-[3px] transition-transform duration-300 group-hover/yash:rotate-12 group-hover/yash:scale-105 active:scale-95">
+              <motion.span
+                variants={ballVariants}
+                className="block w-[24px] h-[24px] sm:w-[30px] sm:h-[30px] lg:w-[36px] lg:h-[36px]"
+              >
                 <CricketBall
                   className="w-full h-full"
                   variant="logo"
                 />
-              </span>
+              </motion.span>
             </span>
           </span>
         </motion.span>
