@@ -59,9 +59,9 @@ export default function WorkSection() {
   return (
     <section
       id="work"
-      className="w-full max-w-[1512px] mx-auto px-6 md:px-12 xl:px-[160px] pt-12 md:pt-20 pb-28 md:pb-36 scroll-mt-8"
+      className="w-full max-w-[1512px] mx-auto pt-12 md:pt-20 pb-28 md:pb-36 scroll-mt-8"
     >
-      <div className="max-w-[1192px] mx-auto flex flex-col">
+      <div className="w-full max-w-[1192px] mx-auto px-6 md:px-12 xl:px-0 flex flex-col">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
