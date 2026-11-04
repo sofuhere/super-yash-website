@@ -25,14 +25,6 @@ export interface TastePlaceholderItem {
 
 export type TasteRowItem = TasteCardItem | TastePlaceholderItem;
 
-export const CATEGORIES: { label: string; value: TasteCategory }[] = [
-  { label: "All Categories", value: "all" },
-  { label: "Music", value: "music" },
-  { label: "Books", value: "books" },
-  { label: "Companies", value: "companies" },
-  { label: "Craft & Design", value: "craft" },
-];
-
 // Row 1: Drifts Left
 export const row1Items: TasteCardItem[] = [
   {

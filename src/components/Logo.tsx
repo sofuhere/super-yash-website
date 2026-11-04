@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import CricketBall from "./CricketBall";
 
@@ -17,7 +18,7 @@ export default function Logo() {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <a
+    <Link
       href="/"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -58,6 +59,6 @@ export default function Logo() {
         </motion.span>
         <span className="text-[#1c1b19]">Yash.</span>
       </span>
-    </a>
+    </Link>
   );
 }

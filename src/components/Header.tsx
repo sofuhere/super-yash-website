@@ -40,11 +40,6 @@ export default function Header() {
   };
 
   useEffect(() => {
-    // Check initial scroll state immediately on mount (handles reload with hash or scrolled position)
-    if (window.scrollY > 20) {
-      setHasScrolled(true);
-    }
-
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
@@ -80,7 +75,10 @@ export default function Header() {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
+    const rafId = requestAnimationFrame(handleScroll);
+
     return () => {
+      cancelAnimationFrame(rafId);
       window.removeEventListener("scroll", handleScroll);
       if (navTimeoutRef.current) {
         clearTimeout(navTimeoutRef.current);

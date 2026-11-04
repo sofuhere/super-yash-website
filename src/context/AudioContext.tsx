@@ -66,11 +66,12 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
     window.addEventListener("click", handleFirstInteraction);
     window.addEventListener("touchstart", handleFirstInteraction);
 
+    const currentAudio = audioRef.current;
     return () => {
       window.removeEventListener("click", handleFirstInteraction);
       window.removeEventListener("touchstart", handleFirstInteraction);
-      if (audioRef.current) {
-        audioRef.current.pause();
+      if (currentAudio) {
+        currentAudio.pause();
       }
     };
   }, []);
