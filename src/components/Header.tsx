@@ -25,6 +25,7 @@ export default function Header() {
 
   const handleNavClick = () => {
     setIsVisible(true);
+    setHasScrolled(true);
     isNavigatingRef.current = true;
 
     if (navTimeoutRef.current) {
@@ -39,6 +40,11 @@ export default function Header() {
   };
 
   useEffect(() => {
+    // Check initial scroll state immediately on mount (handles reload with hash or scrolled position)
+    if (window.scrollY > 20) {
+      setHasScrolled(true);
+    }
+
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
@@ -85,12 +91,12 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+        className={`fixed top-0 left-0 right-0 z-50 bg-[#faf7ef] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
           isVisible ? "translate-y-0" : "-translate-y-full"
         } ${
           hasScrolled
-            ? "bg-[#faf7ef]/92 backdrop-blur-md border-b border-[#dfdbd0]"
-            : "bg-transparent border-b border-transparent"
+            ? "border-b border-[#dfdbd0]"
+            : "border-b border-transparent"
         }`}
       >
         <div className="w-full max-w-[1512px] mx-auto">
