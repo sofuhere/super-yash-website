@@ -9,7 +9,7 @@ interface TasteMarqueeRowProps {
   rowId: string;
   direction: "left" | "right";
   duration?: number; // seconds
-  selectedCategory: TasteCategory;
+  selectedCategory?: TasteCategory;
   isPaused: boolean;
   hoveredInstanceId: string | null;
   onHoverCard: (instanceId: string | null) => void;
@@ -20,7 +20,7 @@ export default function TasteMarqueeRow({
   rowId,
   direction,
   duration = 50,
-  selectedCategory,
+  selectedCategory = "all",
   isPaused,
   hoveredInstanceId,
   onHoverCard,

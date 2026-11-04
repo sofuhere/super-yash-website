@@ -3,16 +3,13 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
-  TasteCategory,
   row1Items,
   row2Items,
   row3Items,
 } from "@/data/tasteData";
-import CategoryFilter from "./CategoryFilter";
 import TasteMarqueeRow from "./TasteMarqueeRow";
 
 export default function TasteSection() {
-  const [selectedCategory, setSelectedCategory] = useState<TasteCategory>("all");
   const [hoveredInstanceId, setHoveredInstanceId] = useState<string | null>(null);
 
   const isPaused = hoveredInstanceId !== null;
@@ -30,7 +27,7 @@ export default function TasteSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 md:mb-10"
+          className="flex flex-col mb-8 md:mb-10"
         >
           {/* Title & Subtitle */}
           <div className="flex flex-col">
@@ -44,26 +41,16 @@ export default function TasteSection() {
               work together :)
             </p>
           </div>
-
-          {/* Category Filter */}
-          <div className="self-start md:self-end">
-            <CategoryFilter
-              selectedCategory={selectedCategory}
-              onSelectCategory={setSelectedCategory}
-            />
-          </div>
         </motion.div>
 
         {/* Marquee Rows Frame (Figma Frame 54, 1192px wide, straight architectural edges - no gradient) */}
         <div className="relative w-full overflow-hidden flex flex-col gap-[20px]">
-
           {/* Row 1: Drift Left */}
           <TasteMarqueeRow
             rowId="r1"
             items={row1Items}
             direction="left"
             duration={70}
-            selectedCategory={selectedCategory}
             isPaused={isPaused}
             hoveredInstanceId={hoveredInstanceId}
             onHoverCard={setHoveredInstanceId}
@@ -75,7 +62,6 @@ export default function TasteSection() {
             items={row2Items}
             direction="right"
             duration={78}
-            selectedCategory={selectedCategory}
             isPaused={isPaused}
             hoveredInstanceId={hoveredInstanceId}
             onHoverCard={setHoveredInstanceId}
@@ -87,7 +73,6 @@ export default function TasteSection() {
             items={row3Items}
             direction="left"
             duration={65}
-            selectedCategory={selectedCategory}
             isPaused={isPaused}
             hoveredInstanceId={hoveredInstanceId}
             onHoverCard={setHoveredInstanceId}
