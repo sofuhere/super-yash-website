@@ -54,17 +54,16 @@ export default function TasteSection() {
           </div>
         </motion.div>
 
-        {/* Marquee Rows Frame (Figma Frame 54, 1192px wide, overflow-hidden) */}
-        <div className="relative w-full overflow-hidden flex flex-col gap-[20px] rounded-[24px]">
-          {/* Edge Fade Gradients confined inside the 1192px frame */}
-          <div
-            className="pointer-events-none absolute inset-y-0 left-0 w-12 md:w-20 bg-gradient-to-r from-[#faf7ef] to-transparent z-10"
-            aria-hidden="true"
-          />
-          <div
-            className="pointer-events-none absolute inset-y-0 right-0 w-12 md:w-20 bg-gradient-to-l from-[#faf7ef] to-transparent z-10"
-            aria-hidden="true"
-          />
+        {/* Marquee Rows Frame (Figma Frame 54, 1192px wide, straight edges with micro alpha mask) */}
+        <div
+          className="relative w-full overflow-hidden flex flex-col gap-[20px]"
+          style={{
+            maskImage:
+              "linear-gradient(to right, transparent, black 28px, black calc(100% - 28px), transparent)",
+            WebkitMaskImage:
+              "linear-gradient(to right, transparent, black 28px, black calc(100% - 28px), transparent)",
+          }}
+        >
 
           {/* Row 1: Drift Left */}
           <TasteMarqueeRow
