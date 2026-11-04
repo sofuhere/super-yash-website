@@ -16,6 +16,45 @@ export function BookIcon({ className = "w-8 h-10" }: { className?: string }) {
   );
 }
 
+export function MusicNoteIcon({ className = "w-8 h-8" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
+    </svg>
+  );
+}
+
+export function BoltIcon({ className = "w-8 h-8" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <path d="M11 21h-1l1-7H7.5c-.88 0-.33-.75-.31-.78C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15L11 21z" />
+    </svg>
+  );
+}
+
+export function TShirtIcon({ className = "w-8 h-8" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <path d="M20.25 5.5l-3.5-2.25c-.25-.16-.57-.15-.81.04C14.7 4.29 13.39 5 12 5s-2.7-.71-3.94-1.71c-.24-.19-.56-.2-.81-.04L3.75 5.5C3.29 5.8 3 6.3 3 6.84v4.32c0 .64.44 1.18 1.07 1.31l2.43.49V20c0 .55.45 1 1 1h9c.55 0 1-.45 1-1v-7.04l2.43-.49c.63-.13 1.07-.67 1.07-1.31V6.84c0-.54-.29-1.04-.75-1.34z" />
+    </svg>
+  );
+}
+
 export function PlayCircleIcon({ className = "w-10 h-10" }: { className?: string }) {
   return (
     <svg

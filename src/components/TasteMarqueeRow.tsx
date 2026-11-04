@@ -25,9 +25,9 @@ export default function TasteMarqueeRow({
   hoveredInstanceId,
   onHoverCard,
 }: TasteMarqueeRowProps) {
-  // 6 cards x 500px = 3000px per set.
-  // Duplicated = 6000px track.
-  const duplicatedItems = [...items, ...items];
+  // 3 items x 4 repetitions = 12 cards (6000px).
+  // Half is exactly 6 cards (3000px). Moving -50% creates a mathematically flawless loop.
+  const duplicatedItems = [...items, ...items, ...items, ...items];
 
   const trackClass =
     direction === "left"

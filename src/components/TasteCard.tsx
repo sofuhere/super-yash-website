@@ -6,8 +6,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { TasteRowItem } from "@/data/tasteData";
 import {
   BookIcon,
-  PlayCircleIcon,
-  ChargerIcon,
+  MusicNoteIcon,
+  BoltIcon,
+  TShirtIcon,
   ChevronForwardIcon,
 } from "./TasteIcons";
 
@@ -47,10 +48,10 @@ export default function TasteCard({
             /* ================= PLACEHOLDER DEFAULT ================= */
             <motion.div
               key="placeholder-default"
-              initial={{ opacity: 0, y: 6 }}
+              initial={{ opacity: 0, y: 4 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -6 }}
-              transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+              exit={{ opacity: 0, y: -4 }}
+              transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
               className="w-full h-full flex justify-between items-stretch"
             >
               <div className="flex-1 flex flex-col justify-between pr-3 h-full">
@@ -78,23 +79,23 @@ export default function TasteCard({
             /* ================= PLACEHOLDER HOVER ================= */
             <motion.div
               key="placeholder-hover"
-              initial={{ opacity: 0, y: 8 }}
+              initial={{ opacity: 0, y: 4 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
-              transition={{ duration: 0.24, ease: [0.16, 1, 0.3, 1] }}
-              className="w-full h-full flex flex-col justify-between"
+              exit={{ opacity: 0, y: -4 }}
+              transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              className="w-full h-full flex flex-col"
             >
-              <div className="flex items-center justify-between w-full h-[30px]">
-                <span className="font-work font-normal text-[22px] text-white/80 leading-[1.25] tracking-[-0.02em]">
+              <div className="flex items-center justify-between w-full h-[30px] mb-2">
+                <span className="font-work font-normal text-[24px] text-white/80 leading-[1.25] tracking-[-0.02em]">
                   {item.label || "In the pipeline"}
                 </span>
-                <div className="w-6 h-6 flex items-center justify-center">
+                <div className="w-6 h-6 flex items-center justify-center shrink-0">
                   <ChevronForwardIcon className="w-[7px] h-[11px] text-white/80" />
                 </div>
               </div>
 
-              <div className="flex-1 flex items-center pt-2">
-                <p className="font-work font-medium italic text-[22px] sm:text-[25px] text-white leading-[1.25] tracking-[-0.02em]">
+              <div>
+                <p className="font-work font-medium italic text-[24px] sm:text-[27px] text-white leading-[1.25] tracking-[-0.02em]">
                   {item.hint || "Adding more artifacts that define my bar."}
                 </p>
               </div>
@@ -111,12 +112,14 @@ export default function TasteCard({
       case "book":
         return <BookIcon className="w-8 h-10 text-white" />;
       case "music":
-        return <PlayCircleIcon className="w-10 h-10 text-white" />;
+        return <MusicNoteIcon className="w-8 h-8 text-white" />;
       case "company":
-        return <ChargerIcon className="w-10 h-10 text-white" />;
+        return <BoltIcon className="w-8 h-8 text-white" />;
+      case "apparel":
+        return <TShirtIcon className="w-8 h-8 text-white" />;
       case "design":
       default:
-        return <ChargerIcon className="w-10 h-10 text-white" />;
+        return <BoltIcon className="w-8 h-8 text-white" />;
     }
   };
 
@@ -144,13 +147,13 @@ export default function TasteCard({
           /* ================= DEFAULT STATE ================= */
           <motion.div
             key="default"
-            initial={{ opacity: 0, y: 6 }}
+            initial={{ opacity: 0, y: 4 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -6 }}
-            transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+            exit={{ opacity: 0, y: -4 }}
+            transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
             className="w-full h-full flex justify-between items-stretch"
           >
-            {/* Left Content Area */}
+            {/* Left Content Area: starts at top-left padding */}
             <div className="flex-1 flex flex-col justify-between pr-3 h-full">
               {/* Title & Creator */}
               <div className="flex flex-col gap-1">
@@ -168,7 +171,7 @@ export default function TasteCard({
               </div>
             </div>
 
-            {/* Right Media Thumbnail */}
+            {/* Right Media Thumbnail: fixed 168x168 */}
             <div className="w-[168px] h-[168px] rounded-[20px] overflow-hidden flex-shrink-0 relative bg-black/10">
               <Image
                 src={item.image}
@@ -184,25 +187,25 @@ export default function TasteCard({
           /* ================= HOVER STATE (MICRO-TAKE) ================= */
           <motion.div
             key="hover"
-            initial={{ opacity: 0, y: 8 }}
+            initial={{ opacity: 0, y: 4 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.24, ease: [0.16, 1, 0.3, 1] }}
-            className="w-full h-full flex flex-col justify-between"
+            exit={{ opacity: 0, y: -4 }}
+            transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full h-full flex flex-col"
           >
-            {/* Top Bar: Title + Chevron */}
-            <div className="flex items-center justify-between w-full h-[30px]">
-              <span className="font-work font-normal text-[24px] text-white leading-[1.25] tracking-[-0.02em]">
+            {/* Top Bar: Title + Chevron locked to exact same 16px padding top & left */}
+            <div className="flex items-center justify-between w-full h-[30px] mb-2">
+              <span className="font-work font-normal text-[24px] text-white leading-[1.25] tracking-[-0.02em] line-clamp-1">
                 {item.title}
               </span>
-              <div className="w-6 h-6 flex items-center justify-center">
+              <div className="w-6 h-6 flex items-center justify-center shrink-0">
                 <ChevronForwardIcon className="w-[7px] h-[11px] text-white" />
               </div>
             </div>
 
-            {/* Quote / Micro-take */}
-            <div className="flex-1 flex items-center pt-2">
-              <p className="font-work font-medium italic text-[24px] sm:text-[27px] text-white leading-[1.25] tracking-[-0.02em]">
+            {/* Quote / Micro-take: top-aligned, exact 8px gap below top bar, matching Figma */}
+            <div>
+              <p className="font-work font-medium italic text-[23px] sm:text-[26px] text-white leading-[1.25] tracking-[-0.02em]">
                 {item.quote}
               </p>
             </div>
