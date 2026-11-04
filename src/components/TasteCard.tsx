@@ -7,8 +7,9 @@ import { TasteRowItem } from "@/data/tasteData";
 import {
   BookIcon,
   MusicNoteIcon,
-  BoltIcon,
-  TShirtIcon,
+  ChargerIcon,
+  RupeeCircleIcon,
+  ApparelIcon,
   ChevronForwardIcon,
 } from "./TasteIcons";
 
@@ -110,16 +111,17 @@ export default function TasteCard({
   const renderIcon = () => {
     switch (item.icon) {
       case "book":
-        return <BookIcon className="w-8 h-10 text-white" />;
+        return <BookIcon className="w-12 h-12 text-white" />;
       case "music":
-        return <MusicNoteIcon className="w-8 h-8 text-white" />;
-      case "company":
-        return <BoltIcon className="w-8 h-8 text-white" />;
+        return <MusicNoteIcon className="w-12 h-12 text-white" />;
+      case "charger":
+        return <ChargerIcon className="w-12 h-12 text-white" />;
+      case "currency":
+        return <RupeeCircleIcon className="w-12 h-12 text-white" />;
       case "apparel":
-        return <TShirtIcon className="w-8 h-8 text-white" />;
-      case "design":
+        return <ApparelIcon className="w-12 h-12 text-white" />;
       default:
-        return <BoltIcon className="w-8 h-8 text-white" />;
+        return <ChargerIcon className="w-12 h-12 text-white" />;
     }
   };
 
@@ -196,7 +198,7 @@ export default function TasteCard({
             {/* Top Bar: Title + Chevron locked to exact same 16px padding top & left */}
             <div className="flex items-center justify-between w-full h-[30px] mb-2">
               <span className="font-work font-normal text-[24px] text-white leading-[1.25] tracking-[-0.02em] line-clamp-1">
-                {item.title}
+                {item.hoverTitle || item.title}
               </span>
               <div className="w-6 h-6 flex items-center justify-center shrink-0">
                 <ChevronForwardIcon className="w-[7px] h-[11px] text-white" />
@@ -205,7 +207,7 @@ export default function TasteCard({
 
             {/* Quote / Micro-take: top-aligned, exact 8px gap below top bar, matching Figma */}
             <div>
-              <p className="font-work font-medium italic text-[23px] sm:text-[26px] text-white leading-[1.25] tracking-[-0.02em]">
+              <p className="font-work font-medium italic text-[24px] sm:text-[27px] text-white leading-[1.25] tracking-[-0.02em]">
                 {item.quote}
               </p>
             </div>

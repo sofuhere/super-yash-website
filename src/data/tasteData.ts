@@ -9,8 +9,9 @@ export interface TasteCardItem {
   bgColor: string;
   image: string;
   quote: string;
+  hoverTitle?: string;
   link?: string;
-  icon: "music" | "book" | "company" | "apparel" | "design";
+  icon: "music" | "book" | "charger" | "currency" | "apparel";
 }
 
 export interface TastePlaceholderItem {
@@ -62,10 +63,11 @@ export const row1Items: TasteCardItem[] = [
     category: "companies",
     title: "Ather Energy",
     creator: "Tarun Mehta & \nSwapnil Jain",
+    hoverTitle: "What I like about Ather?",
     bgColor: "#102a83", // Royal Cobalt
     image: "/taste/ather.png",
-    quote: "How seamlessly they marry hardware and software, with relentless attention to every small detail.",
-    icon: "company",
+    quote: "The way they treat hardware and software as a single, beautifully crafted medium is lovely.",
+    icon: "charger",
   },
 ];
 
@@ -86,7 +88,7 @@ export const row2Items: TasteCardItem[] = [
     id: "duniya",
     type: "card",
     category: "music",
-    title: "Duniya kisi ke pyar me",
+    title: "Duniya kisi ke pyaar me",
     creator: "Mehdi Hassan",
     bgColor: "#8c4d28", // Warm Clay / Rust
     image: "/taste/duniya.png",
@@ -113,11 +115,12 @@ export const row3Items: TasteCardItem[] = [
     type: "card",
     category: "companies",
     title: "Zerodha",
-    creator: "Nithin & Nikhil Kamath",
+    creator: "Nitin & Nikhil Kamath",
+    hoverTitle: "What I like about Zerodha?",
     bgColor: "#11318d", // Deep Navy
     image: "/taste/zerodha.png",
-    quote: "Their radical commitment to doing what’s right for the user, even when it directly hurts their own bottom line.",
-    icon: "company",
+    quote: "Extreme honesty as a design principle, always choosing what is right over what is convenient.",
+    icon: "currency",
   },
   {
     id: "sprint",
@@ -125,9 +128,10 @@ export const row3Items: TasteCardItem[] = [
     category: "books",
     title: "Sprint",
     creator: "Jake Knapp",
+    hoverTitle: "Sprint",
     bgColor: "#4db9e8", // Cyan Blue
     image: "/taste/sprint.png",
-    quote: "The book that drew me into the craft of product building, and one of the very first I ever read.",
+    quote: "Amongst my first product reads, and the book that drew me into the craft of building.",
     icon: "book",
   },
   {
@@ -136,9 +140,10 @@ export const row3Items: TasteCardItem[] = [
     category: "craft",
     title: "March",
     creator: "Sukh Dugal",
+    hoverTitle: "What I like about March?",
     bgColor: "#0f2275", // Deep Indigo
     image: "/taste/march.png",
-    quote: "How they elevate the simplest everyday essentials through obsessive material detail and honest storytelling.",
+    quote: "They make the most ordinary basics extraordinary through attention-to-detail and narrative.",
     icon: "apparel",
   },
 ];
