@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import WorkSection from "@/components/WorkSection";
+import TasteSection from "@/components/TasteSection";
 
 export default function Home() {
   return (
@@ -17,6 +18,9 @@ export default function Home() {
 
       {/* Screen 2: Work Highlights Section */}
       <WorkSection />
+
+      {/* Screen 3: Understand My Taste Section */}
+      <TasteSection />
     </div>
   );
 }

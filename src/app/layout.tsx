@@ -20,7 +20,8 @@ const workSans = Work_Sans({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-work-sans",
-  weight: "500",
+  weight: ["400", "500"],
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {

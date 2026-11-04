@@ -13,7 +13,7 @@
 const navItems = [
   { label: "Work", number: "01", href: "#work" },
   { label: "About me", number: "02", href: "#about" },
-  { label: "Taste in music", number: "03", href: "#music" },
+  { label: "My Taste", number: "03", href: "#taste" },
   { label: "Views on politics", number: "04", href: "#politics" },
 ];
 
