@@ -54,14 +54,14 @@ export default function TasteSection() {
           </div>
         </motion.div>
 
-        {/* Marquee Rows Frame (Figma Frame 54, 1192px wide, straight edges with micro alpha mask) */}
+        {/* Marquee Rows Frame (Figma Frame 54, 1192px wide, straight edges with subtle 14px feather) */}
         <div
           className="relative w-full overflow-hidden flex flex-col gap-[20px]"
           style={{
             maskImage:
-              "linear-gradient(to right, transparent, black 28px, black calc(100% - 28px), transparent)",
+              "linear-gradient(to right, transparent 0px, black 14px, black calc(100% - 14px), transparent 100%)",
             WebkitMaskImage:
-              "linear-gradient(to right, transparent, black 28px, black calc(100% - 28px), transparent)",
+              "linear-gradient(to right, transparent 0px, black 14px, black calc(100% - 14px), transparent 100%)",
           }}
         >
 
