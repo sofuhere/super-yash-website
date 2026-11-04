@@ -17,13 +17,18 @@ const navItems = [
   { label: "Views on politics", number: "04", href: "#politics" },
 ];
 
-export default function Nav() {
+interface NavProps {
+  onNavClick?: () => void;
+}
+
+export default function Nav({ onNavClick }: NavProps) {
   return (
     <nav className="flex items-center gap-[20px] md:gap-[24px] overflow-x-auto no-scrollbar h-[30px]">
       {navItems.map((item) => (
         <a
           key={item.number}
           href={item.href}
+          onClick={onNavClick}
           className="inline-flex items-center relative group transition-opacity duration-200 hover:opacity-70 whitespace-nowrap h-[30px]"
         >
           <span

@@ -20,7 +20,7 @@ export default function TasteSection() {
   return (
     <section
       id="taste"
-      className="w-full max-w-[1512px] mx-auto pt-16 md:pt-24 pb-28 md:pb-36 scroll-mt-8 select-none"
+      className="w-full max-w-[1512px] mx-auto pt-16 md:pt-24 pb-28 md:pb-36 scroll-mt-[104px] select-none"
     >
       {/* ================= EXACT FIGMA 1192px CONTAINER ================= */}
       <div className="w-full max-w-[1192px] mx-auto px-6 md:px-12 xl:px-0 flex flex-col">

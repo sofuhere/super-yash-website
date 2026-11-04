@@ -23,6 +23,10 @@
   scrollbar-width: none;  /* Firefox */
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html, body {
   background-color: #faf7ef;
   color: #1c1b19;

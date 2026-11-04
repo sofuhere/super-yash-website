@@ -20,11 +20,27 @@ export default function Header() {
   const [isVisible, setIsVisible] = useState(true);
   const [hasScrolled, setHasScrolled] = useState(false);
   const lastScrollY = useRef(0);
+  const isNavigatingRef = useRef(false);
+  const navTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleNavClick = () => {
+    setIsVisible(true);
+    isNavigatingRef.current = true;
+
+    if (navTimeoutRef.current) {
+      clearTimeout(navTimeoutRef.current);
+    }
+
+    // Keep header visible and lock hiding during programmatic smooth-scroll to anchor
+    navTimeoutRef.current = setTimeout(() => {
+      isNavigatingRef.current = false;
+      lastScrollY.current = window.scrollY;
+    }, 900);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      const deltaY = currentScrollY - lastScrollY.current;
 
       // Check if we are past the hero top threshold
       if (currentScrollY > 20) {
@@ -35,6 +51,15 @@ export default function Header() {
         lastScrollY.current = currentScrollY;
         return;
       }
+
+      // If anchor navigation from header is in progress, stay visible and update baseline
+      if (isNavigatingRef.current) {
+        setIsVisible(true);
+        lastScrollY.current = currentScrollY;
+        return;
+      }
+
+      const deltaY = currentScrollY - lastScrollY.current;
 
       // Scrolling down -> hide header (with threshold to avoid micro-jitter)
       if (deltaY > 8 && currentScrollY > 84) {
@@ -49,7 +74,12 @@ export default function Header() {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (navTimeoutRef.current) {
+        clearTimeout(navTimeoutRef.current);
+      }
+    };
   }, []);
 
   return (
@@ -70,7 +100,7 @@ export default function Header() {
               <Logo />
             </div>
             <div className="justify-self-center flex items-center">
-              <Nav />
+              <Nav onNavClick={handleNavClick} />
             </div>
             <div className="justify-self-end flex items-center">
               <SoundToggle />
@@ -84,7 +114,7 @@ export default function Header() {
               <SoundToggle />
             </div>
             <div className="flex justify-center w-full pt-1">
-              <Nav />
+              <Nav onNavClick={handleNavClick} />
             </div>
           </div>
         </div>
