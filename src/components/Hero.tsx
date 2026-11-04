@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion, type Variants } from "framer-motion";
 import CricketBall from "./CricketBall";
 import HeroCta from "./HeroCta";
@@ -68,6 +69,8 @@ const ballVariants: Variants = {
  * - "enjoys playing cricket.": #1c1b19 (Regular)
  */
 export default function Hero() {
+  const [isYashHovered, setIsYashHovered] = useState(false);
+
   return (
     <main className="flex flex-col items-center justify-center flex-1 px-6 md:px-12 xl:px-[120px] py-12 md:py-0 select-none">
       <motion.h1
@@ -79,19 +82,36 @@ export default function Hero() {
         {/* Line 1: Hey, I’m Yash 🔴 */}
         <motion.span variants={lineVariants} className="block">
           <span>Hey, I’m </span>
-          <span className="group/yash inline-inline cursor-pointer">
+          <span
+            onMouseEnter={() => setIsYashHovered(true)}
+            onMouseLeave={() => setIsYashHovered(false)}
+            className="group/yash inline-inline cursor-pointer"
+          >
             <span className="text-[#a2a2a2] transition-colors duration-300 group-hover/yash:text-[#d6211e]">
               Yash
             </span>
-            <span className="inline-block align-middle ml-[6px] sm:ml-[8px] lg:ml-[9px] relative -top-[2px] md:-top-[3px] transition-transform duration-300 group-hover/yash:rotate-12 group-hover/yash:scale-105 active:scale-95">
+            <span className="inline-block align-middle ml-[6px] sm:ml-[8px] lg:ml-[9px] relative -top-[2px] md:-top-[3px]">
               <motion.span
                 variants={ballVariants}
                 className="block w-[24px] h-[24px] sm:w-[30px] sm:h-[30px] lg:w-[36px] lg:h-[36px]"
               >
-                <CricketBall
-                  className="w-full h-full"
-                  variant="logo"
-                />
+                <motion.span
+                  animate={{
+                    rotate: isYashHovered ? 20 : 0,
+                    scale: isYashHovered ? 1.08 : 1,
+                  }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 380,
+                    damping: 22,
+                  }}
+                  className="block w-full h-full"
+                >
+                  <CricketBall
+                    className="w-full h-full"
+                    variant="logo"
+                  />
+                </motion.span>
               </motion.span>
             </span>
           </span>
