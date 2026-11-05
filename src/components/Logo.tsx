@@ -1,12 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import CricketBall from "./CricketBall";
 
 /**
  * Logo component — cricket ball icon + "Yash." text.
+ *
+ * Behavior:
+ * - Clicking the logo refreshes the page and resets back to the top of the homepage.
  *
  * Hover state (Super Yash Easter egg):
  * - Ball tilts 20deg and subtly scales up.
@@ -17,9 +19,24 @@ import CricketBall from "./CricketBall";
 export default function Logo() {
   const [isHovered, setIsHovered] = useState(false);
 
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    if (
+      window.location.pathname === "/" &&
+      (!window.location.hash || window.location.hash === "#")
+    ) {
+      window.location.reload();
+    } else {
+      // eslint-disable-next-line @next/next/no-location-assign-relative-destination
+      window.location.href = "/";
+    }
+  };
+
   return (
-    <Link
+    /* eslint-disable-next-line @next/next/no-html-link-for-pages */
+    <a
       href="/"
+      onClick={handleClick}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onFocus={() => setIsHovered(true)}
@@ -59,6 +76,6 @@ export default function Logo() {
         </motion.span>
         <span className="text-[#1c1b19]">Yash.</span>
       </span>
-    </Link>
+    </a>
   );
 }
